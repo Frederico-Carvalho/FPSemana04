@@ -1,8 +1,11 @@
 import json
 
-file = open ("data.json", "rt")
-json_data = file.read()
-data = json.loads(json_data)
-print(data)
-
-file.close()
+ficheiro = input()
+try:
+    with open(ficheiro, encoding='utf-8') as data:
+        texto = json.load(data)
+        print(texto)
+except:
+    print("Ocorreu um erro!")
+finally:
+    print("Processo concluido!")
